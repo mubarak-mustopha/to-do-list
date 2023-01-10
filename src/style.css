@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 650px;
+    margin: 50px auto;
+    color: black;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.projects {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 1rem;
+}
+
+.project,
+.form,
+.add-project {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+.project:hover,
+.add-project:hover {
+    transform: translateY(-6px);
+}
+
+.add-project {
+    font-size: 2rem;
+}
+
+.project {
+    position: relative;
+}
+
+.count {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*project containers page*/
+/*proj container header*/
+.container header {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/*.add-todo {
+    background-color: #0066ff;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    justify-self: end;
+}*/
+.proj-nav {
+    justify-self: end;
+    align-self: end;
+    position: relative;
+}
+
+.proj-nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    min-width: 110px;
+    font-size: 14px;
+
+
+    font-weight: lighter;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform .1s ease-in;
+
+    background-color: #0066ff;
+    color: white;
+    list-style-type: none;
+}
+
+.proj-nav:hover ul {
+    transform: scale(1);
+}
+
+.proj-nav li {
+    margin: 8px;
+    cursor: pointer;
+}
+
+.proj-nav li:hover {
+    color: #BEB7A4;
+}
+
+/*proj container main*/
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+
+
+ul .to-do {
+    display: grid;
+    justify-content: space-between;
+    justify-items: end;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 8px;
+
+}
+
+ul .to-do:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.to-do form {
+    justify-self: start;
+}
+
+.to-do .delete {
+    cursor: pointer;
+    background-color: red;
+    padding: 3px;
+    color: white;
+}
+
+/*form */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 200px;
+    height: auto;
+    padding: 10px 0;
+    cursor: default;
+    align-items: center;
+    transform: translateX(-250px);
+    transition: transform 0.1s ease-in;
+}
+
+.form.slide {
+    transform: translateX(0);
+}
+
+.form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 4px;
+}
+
+.form-row>* {
+    display: block;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    border: none;
+}
