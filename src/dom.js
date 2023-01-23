@@ -6,6 +6,11 @@ import { displayForm, getFormValues } from "./form";
 import { createTodoListItem, removeTodo } from "./project";
 import { addToProjContainer } from "./home";
 
+function hideForm() {
+    let form = document.querySelector(".form form");
+    form.parentElement.classList.remove("slide");
+}
+
 let localStorage = window.localStorage;
 let projects = localStorage.getItem("projects");
 
@@ -44,6 +49,7 @@ container.addEventListener("click", (e) => {
         addToProjContainer(newProj);
         console.log(projects)
     } else if (classList.contains("arrow")) {
+        hideForm();
         displayHomePage(projects);
     } else if (classList.contains("add-todo")) {
         displayForm();
@@ -85,8 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
         todoApp.addTodo(projects, project, todo);
         console.log("Index", projects[project]);
         updateLocalStorage();
-        setTimeout(() => {
-            form.parentElement.classList.remove("slide");
-        }, 1000)
+        setTimeout(hideForm, 1000)
     })
 })
