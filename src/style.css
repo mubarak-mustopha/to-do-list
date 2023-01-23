@@ -215,6 +215,10 @@ button {
 
 @media (max-width: 750px) {
 
+    body {
+        height: 100%;
+    }
+
     .container {
         width: 80%;
         display: flex;
