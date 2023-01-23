@@ -239,6 +239,10 @@ button {
         flex-direction: column;
     }
 
+    .project {
+        height: 350px;
+    }
+
     .container header,
     .container ul {
         width: 100%;
