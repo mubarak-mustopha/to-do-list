@@ -44,10 +44,13 @@ container.addEventListener("click", (e) => {
         displayProject(projects[projName], projName);
     } else if (classList.contains("add-project")) {
         let newProj = prompt("Type In project Name");
-        todoApp.addProject(projects, newProj);
-        updateLocalStorage();
-        addToProjContainer(newProj);
-        console.log(projects)
+        console.log(newProj);
+        if (newProj) {
+            todoApp.addProject(projects, newProj);
+            updateLocalStorage();
+            addToProjContainer(newProj);
+            console.log(projects)
+        }
     } else if (classList.contains("arrow")) {
         hideForm();
         displayHomePage(projects);
