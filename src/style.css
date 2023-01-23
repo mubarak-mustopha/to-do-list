@@ -247,4 +247,12 @@ button {
     ul .to-do {
         grid-template-columns: repeat(3, auto);
     }
+
+    .proj-nav:hover ul {
+        transform: scale(0);
+    }
+
+    .proj-nav.scale ul {
+        transform: scale(1);
+    }
 }

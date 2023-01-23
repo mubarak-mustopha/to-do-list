@@ -3,7 +3,7 @@ import displayHomePage from "./home";
 import displayProject from "./project";
 import createForm from "./form";
 import { displayForm, getFormValues } from "./form";
-import { createTodoListItem, removeTodo } from "./project";
+import { createTodoListItem, removeTodo, hideMenu } from "./project";
 import { addToProjContainer } from "./home";
 
 function hideForm() {
@@ -52,12 +52,20 @@ container.addEventListener("click", (e) => {
             console.log(projects)
         }
     } else if (classList.contains("arrow")) {
-        hideForm();
         displayHomePage(projects);
+        if (document.querySelector(".form").classList.contains("slide")) {
+            hideForm();
+        }
+    } else if (classList.contains("menu")) {
+
+        let projNav = document.querySelector(".proj-nav");
+        projNav.classList.add("scale")
+
     } else if (classList.contains("add-todo")) {
         displayForm();
+        hideMenu();
         updateLocalStorage();
-        console.log(projects)
+        //console.log(projects)
     } else if (classList.contains("delete")) {
         let project = document.querySelector(".container>ul");
         let li = e.target.parentElement;
@@ -68,7 +76,7 @@ container.addEventListener("click", (e) => {
         todoApp.deleteProj(projects, projName);
         displayHomePage(projects);
         updateLocalStorage();
-    } else if (e.target.id = "checkbox") {
+    } else if (e.target === document.querySelector("input#checkbox")) {
         let project = document.querySelector(".container>ul");
         let li = e.target.parentElement.parentElement;
         todoApp.markAsDone(projects, project.id, li.dataset.index);

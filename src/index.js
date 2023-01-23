@@ -31,6 +31,7 @@ let addTodo = (projects, project, toDoObj) => {
 let createTodo = (task, dueDate, priority) => new Todo(task, dueDate, priority);
 
 let markAsDone = (projects, project, toDoIndex) => {
+    console.log(projects[project][toDoIndex]);
     projects[project][toDoIndex].check();
 }
 

@@ -56,7 +56,7 @@ export default function displayHomePage(projects) {
 
     container.appendChild(heading);
     container.appendChild(projectContainer);
-    console.log(projectContainer.children);
+    //console.log(projectContainer.children);
 
 }
 

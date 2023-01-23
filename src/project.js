@@ -9,7 +9,7 @@ let createHeader = (projName) => {
     let header = document.createElement("header");
     let headerContent = `<div ><img class="arrow" src=${Arrow} alt=""></div>
                 <h2 class="project-name">${projName}</h2>
-                <div class="proj-nav"><img class="arrow" src=${DotIcon} alt="">
+                <div class="proj-nav"><img class="menu" src=${DotIcon} alt="">
                     <ul>
                         <li class="add-todo">Add To Project</li>
                         <li class="delete-proj">Delete Project</li>
@@ -47,6 +47,11 @@ let removeTodo = (projects, project, todoListItem) => {
 
 }
 
+let hideMenu = () => {
+    let projNav = document.querySelector(".proj-nav");
+    projNav.classList.remove("scale")
+}
+
 export default function displayProject(project, projName) {
     let container = document.querySelector(".container")
     container.innerHTML = "";
@@ -65,4 +70,4 @@ export default function displayProject(project, projName) {
     container.appendChild(todoList)
 }
 
-export { createTodoListItem, removeTodo }
+export { createTodoListItem, removeTodo, hideMenu }
