@@ -7,20 +7,20 @@ let createFormContent = () => {
     <form action="">
         <div class="form-row">
             <label for="task">What is to be done?</label>
-            <input type="text" name="" id="task">
+            <input type="text" name="" id="task" required>
         </div>
         <div class="form-row">
             <label for="date">Date?</label>
-            <input type="date" name="" id="date">
+            <input type="date" name="" id="date" required>
         </div>
 
         <div class="form-row">
             <label for="time">Time</label>
-            <input type="time" name="" id="time">
+            <input type="time" name="" id="time" required>
         </div>
         <div class="form-row">
             <label for="priority">Priority</label>
-            <input type="number" name="" id="priority">
+            <input type="number" name="" id="priority" required min=1 max=5>
         </div>
         <button type="submit"><img src=${Check} alt=""></button>
     </form>
